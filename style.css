@@ -1,0 +1,1773 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #090909;
+    color: #e7e1d7;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-container {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background: rgba(255,255,255,0.05);
+
+    z-index: 9999;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+
+    background: #d6c8ad;
+
+    transition: width 0.1s linear;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: calc(100% - 60px);
+    max-width: 1200px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 12px 20px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(10,10,10,0.6);
+
+    backdrop-filter: blur(12px);
+
+    border-radius: 50px;
+}
+
+.nav-logo {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    color: #aaa;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #fff;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 100px 25px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #292722 0%,
+            #151513 35%,
+            #080808 75%,
+            #030303 100%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.03);
+
+    filter: blur(100px);
+
+    animation: breathe 8s infinite alternate ease-in-out;
+}
+
+@keyframes breathe {
+
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.7)
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 1000px;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    color: #918a7d;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 8vw, 100px);
+
+    font-weight: normal;
+
+    line-height: 1.02;
+
+    text-transform: uppercase;
+
+    letter-spacing: -2px;
+
+    color: #eee8dc;
+}
+
+.hero-line {
+    width: 70px;
+
+    height: 1px;
+
+    background: #777;
+
+    margin: 40px auto;
+}
+
+.hero-subtitle {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    font-style: italic;
+
+    color: #aaa398;
+}
+
+.start-button {
+    margin-top: 55px;
+
+    padding: 16px 30px;
+
+    border: 1px solid #666;
+
+    background: transparent;
+
+    color: #eee;
+
+    cursor: pointer;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    transition: all 0.4s ease;
+}
+
+.start-button:hover {
+    background: #eee;
+
+    color: #111;
+
+    transform: translateY(-3px);
+}
+
+.arrow {
+    margin-left: 15px;
+}
+
+.scroll-text {
+    position: absolute;
+
+    bottom: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: Arial, sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 4px;
+
+    color: #666;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   CHAPTER
+========================================= */
+
+.chapter {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 170px 35px;
+}
+
+.chapter-header {
+    max-width: 850px;
+
+    margin: 0 auto 100px;
+}
+
+.chapter-number {
+    display: block;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 6px;
+
+    color: #827b70;
+
+    margin-bottom: 30px;
+}
+
+.chapter h2 {
+    font-size: clamp(45px, 7vw, 82px);
+
+    font-weight: normal;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+
+    color: #eee8dc;
+}
+
+.chapter-intro {
+    max-width: 700px;
+
+    margin-top: 45px;
+
+    font-size: 24px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #aaa398;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story {
+    max-width: 720px;
+
+    margin: auto;
+
+    font-size: 19px;
+
+    color: #d0cbc1;
+}
+
+.story p {
+    margin-bottom: 38px;
+}
+
+.story strong {
+    color: #fff;
+}
+
+.story em {
+    color: #c6bcab;
+}
+
+
+/* =========================================
+   EMPHASIS
+========================================= */
+
+.emphasis {
+    text-align: center;
+
+    font-size: 34px !important;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #eee8dc !important;
+
+    margin-top: 90px !important;
+
+    margin-bottom: 90px !important;
+}
+
+
+/* =========================================
+   BLOCKQUOTE
+========================================= */
+
+blockquote {
+    margin: 70px 0;
+
+    padding: 25px 35px;
+
+    border-left: 1px solid #777;
+
+    color: #aaa398;
+
+    font-size: 20px;
+
+    font-style: italic;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BIG QUOTE
+========================================= */
+
+.big-quote {
+    margin: 100px auto;
+
+    padding: 60px 30px;
+
+    text-align: center;
+
+    font-size: 31px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color: #ddd5c7;
+
+    position: relative;
+}
+
+.big-quote::before {
+    content: "“";
+
+    display: block;
+
+    font-size: 70px;
+
+    line-height: 0.5;
+
+    color: #555;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   SECTION BREAK
+========================================= */
+
+.section-break {
+    text-align: center;
+
+    margin: 110px 0;
+
+    color: #615b51;
+
+    font-size: 14px;
+
+    letter-spacing: 10px;
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.ending {
+    text-align: center;
+
+    margin-top: 120px;
+
+    padding-top: 60px;
+
+    border-top: 1px solid #292929;
+
+    font-size: 27px;
+
+    font-style: italic;
+
+    color: #e0d8ca;
+}
+
+
+/* =========================================
+   TRANSITION
+========================================= */
+
+.transition {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #090909,
+            #151513,
+            #090909
+        );
+}
+
+.transition-content span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+}
+
+.transition-line {
+    width: 1px;
+
+    height: 100px;
+
+    background: #444;
+
+    margin: 35px auto;
+}
+
+.transition-content p {
+    font-size: 28px;
+
+    font-style: italic;
+
+    color: #aaa398;
+}
+
+
+/* =========================================
+   BAB 1
+========================================= */
+
+.chapter-one {
+    background:
+        linear-gradient(
+            to bottom,
+            #090909,
+            #0e0e0d,
+            #090909
+        );
+}
+
+
+/* =========================================
+   NEXT CHAPTER
+========================================= */
+
+.next-chapter {
+    min-height: 90vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 80px 25px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #24231f,
+            #0a0a0a 65%
+        );
+}
+
+.next-content {
+    max-width: 800px;
+}
+
+.next-label {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 5px;
+
+    color: #777;
+}
+
+.next-content h2 {
+    margin-top: 30px;
+
+    font-size: clamp(45px, 7vw, 80px);
+
+    line-height: 1.05;
+
+    font-weight: normal;
+
+    color: #eee8dc;
+}
+
+.next-content p {
+    margin: 35px auto;
+
+    max-width: 550px;
+
+    color: #999;
+
+    font-size: 18px;
+
+    font-style: italic;
+}
+
+.next-content button {
+    padding: 16px 30px;
+
+    background: transparent;
+
+    border: 1px solid #666;
+
+    color: #eee;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.next-content button:hover {
+    background: #eee;
+
+    color: #111;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 70px 25px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 1px solid #1d1d1d;
+}
+
+.footer-title {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+
+    color: #aaa;
+}
+
+footer p {
+    margin: 20px 0;
+
+    color: #555;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+footer span {
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+
+    color: #444;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   REVEAL ANIMATION
+========================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   BACK TO TOP
+========================================= */
+
+.back-to-top {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid #555;
+
+    background: rgba(20,20,20,0.8);
+
+    color: #eee;
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s;
+
+    z-index: 500;
+}
+
+.back-to-top.show {
+    opacity: 1;
+
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background: #eee;
+
+    color: #111;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        width: calc(100% - 25px);
+
+        top: 10px;
+
+        padding: 10px 15px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-menu a {
+        font-size: 9px;
+    }
+
+    .nav-logo {
+        font-size: 8px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .eyebrow {
+        font-size: 8px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .chapter {
+        padding: 110px 22px;
+    }
+
+    .chapter h2 {
+        font-size: 46px;
+    }
+
+    .chapter-intro {
+        font-size: 19px;
+    }
+
+    .story {
+        font-size: 17px;
+    }
+
+    .emphasis {
+        font-size: 27px !important;
+    }
+
+    blockquote {
+        margin: 60px 0;
+
+        padding: 20px;
+
+        font-size: 17px;
+    }
+
+    .big-quote {
+        font-size: 24px;
+
+        padding: 40px 10px;
+    }
+
+    .next-content h2 {
+        font-size: 47px;
+    }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* ==========================================
+   MENU DAFTAR BAB
+   ========================================== */
+
+.chapter-menu {
+    position: relative;
+}
+
+.chapter-menu-button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: inherit;
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.chapter-menu-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.chapter-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+
+    width: 340px;
+    max-height: 70vh;
+    overflow-y: auto;
+
+    background: rgba(20, 20, 20, 0.97);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 9999;
+}
+
+.chapter-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.chapter-dropdown a {
+    display: block;
+
+    padding: 14px 18px;
+
+    color: inherit;
+    text-decoration: none;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.25s ease;
+}
+
+.chapter-dropdown a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    padding-left: 24px;
+}
+
+.chapter-dropdown a:last-child {
+    border-bottom: none;
+}
+
+
+/* ==========================================
+   SCROLLBAR MENU BAB
+   ========================================== */
+
+.chapter-dropdown::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chapter-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .chapter-dropdown {
+        position: fixed;
+
+        top: 70px;
+        left: 10px;
+        right: 10px;
+
+        width: auto;
+        max-height: 75vh;
+    }
+
+    .chapter-menu-button {
+        font-size: 12px;
+        padding: 9px 12px;
+    }
+
+}
+
+/* ==========================================
+   CINEMATIC BACKGROUND
+   KALAU MEMANG JODOH
+   ========================================== */
+
+/* Background utama website */
+body {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(120, 95, 65, 0.18),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 50%,
+            rgba(80, 65, 50, 0.12),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(100, 80, 55, 0.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            180deg,
+            #0b0a09 0%,
+            #11100e 30%,
+            #0d0c0b 65%,
+            #080807 100%
+        );
+
+    background-attachment: fixed;
+    position: relative;
+}
+
+
+/* ==========================================
+   CAHAYA LEMBUT DI SELURUH HALAMAN
+   ========================================== */
+
+body::before {
+    content: "";
+    position: fixed;
+
+    top: -20%;
+    left: 50%;
+
+    width: 700px;
+    height: 700px;
+
+    transform: translateX(-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(190, 160, 115, 0.08) 0%,
+            rgba(150, 120, 80, 0.04) 35%,
+            transparent 70%
+        );
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: cinematicLight 12s ease-in-out infinite alternate;
+}
+
+
+/* ==========================================
+   VIGNETTE
+   ========================================== */
+
+body::after {
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 45%,
+            rgba(0, 0, 0, 0.20) 75%,
+            rgba(0, 0, 0, 0.60) 100%
+        );
+
+    z-index: 999;
+}
+
+
+/* ==========================================
+   ANIMASI CAHAYA
+   ========================================== */
+
+@keyframes cinematicLight {
+
+    0% {
+        transform:
+            translateX(-50%)
+            translateY(-20px)
+            scale(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateX(-50%)
+            translateY(40px)
+            scale(1.15);
+        opacity: 1;
+    }
+
+}
+
+
+/* ==========================================
+   CHAPTER SEBAGAI "HALAMAN"
+   ========================================== */
+
+.chapter {
+    position: relative;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.012),
+            rgba(255, 255, 255, 0)
+        );
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ==========================================
+   CAHAYA DI BELAKANG JUDUL BAB
+   ========================================== */
+
+.chapter-header {
+    position: relative;
+}
+
+.chapter-header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180, 145, 100, 0.08),
+            transparent 70%
+        );
+
+    filter: blur(10px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* ==========================================
+   STORY LEBIH TERASA SEPERTI HALAMAN BUKU
+   ========================================== */
+
+.story {
+    position: relative;
+}
+
+.story::before {
+    content: "";
+
+    position: absolute;
+
+    left: -25px;
+    top: 0;
+
+    width: 1px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(190, 160, 115, 0.15),
+            transparent
+        );
+
+    opacity: 0.6;
+}
+
+
+/* ==========================================
+   QUOTE LEBIH CINEMATIC
+   ========================================== */
+
+blockquote {
+    position: relative;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(180, 145, 100, 0.06),
+            transparent
+        );
+
+    border-left: 1px solid rgba(190, 160, 115, 0.35);
+
+    padding-left: 25px;
+
+    box-shadow:
+        -10px 0 30px rgba(150, 120, 80, 0.03);
+}
+
+
+/* ==========================================
+   BIG QUOTE / KALIMAT PENTING
+   ========================================== */
+
+.big-quote {
+    position: relative;
+
+    text-shadow:
+        0 0 25px rgba(200, 170, 120, 0.08);
+}
+
+
+/* ==========================================
+   NEXT CHAPTER
+   ========================================== */
+
+.next-chapter {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(180, 145, 100, 0.08),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255, 255, 255, 0.015),
+            transparent
+        );
+
+    box-shadow:
+        inset 0 1px rgba(255, 255, 255, 0.03),
+        inset 0 -1px rgba(255, 255, 255, 0.03);
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    body::before {
+        width: 450px;
+        height: 450px;
+    }
+
+    .story::before {
+        left: -12px;
+    }
+
+}
+
+/* ==========================================
+   GALERI FOTO
+   ========================================== */
+
+.photo-gallery {
+    position: relative;
+
+    padding: 120px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(180, 145, 100, 0.07),
+            transparent 55%
+        );
+}
+
+
+.photo-gallery .chapter-header {
+    text-align: center;
+
+    max-width: 700px;
+
+    margin: 0 auto 70px;
+}
+
+
+.photo-gallery .chapter-header p {
+    margin-top: 20px;
+
+    opacity: 0.65;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   GRID FOTO
+   ========================================== */
+
+.photo-grid {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 35px;
+
+}
+
+
+/* ==========================================
+   ITEM FOTO
+   ========================================== */
+
+.photo-item {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+    padding: 10px;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+.photo-item:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* ==========================================
+   GAMBAR
+   ========================================== */
+
+.photo-item img {
+
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: cover;
+
+    display: block;
+
+    cursor: pointer;
+
+    filter:
+        brightness(0.85)
+        contrast(1.05);
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+
+}
+
+
+.photo-item:hover img {
+
+    transform: scale(1.04);
+
+    filter:
+        brightness(1)
+        contrast(1.05);
+
+}
+
+
+/* ==========================================
+   CAPTION
+   ========================================== */
+
+.photo-item p {
+
+    padding: 15px 8px 8px;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    opacity: 0.65;
+
+}
+
+
+/* ==========================================
+   LIGHTBOX
+   ========================================== */
+
+.photo-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(0, 0, 0, 0.92);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+    z-index: 10000;
+
+}
+
+
+.photo-lightbox.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+.photo-lightbox img {
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, 0.7);
+
+}
+
+
+.photo-close {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 35px;
+
+    font-size: 40px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    opacity: 0.8;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+
+}
+
+
+.photo-close:hover {
+
+    transform: scale(1.1);
+
+    opacity: 1;
+
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 700px) {
+
+    .photo-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .photo-item img {
+
+        height: 350px;
+
+    }
+
+
+    .photo-gallery {
+
+        padding:
+            80px 15px;
+
+    }
+
+}
+
+/* ==========================================
+   MENU FOTO
+   ========================================== */
+
+.photo-menu {
+    position: relative;
+    display: inline-block;
+}
+
+
+/* Tombol FOTO */
+
+.photo-menu-button {
+    background: transparent;
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: inherit;
+
+    padding: 10px 16px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.photo-menu-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* ==========================================
+   DROPDOWN FOTO
+   ========================================== */
+
+.photo-dropdown {
+    position: absolute;
+
+    top: calc(100% + 10px);
+
+    right: 0;
+
+    width: 360px;
+
+    max-height: 70vh;
+
+    overflow-y: auto;
+
+    background: rgba(20, 19, 17, 0.98);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.55);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(-10px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+    z-index: 9999;
+}
+
+
+/* Saat dibuka */
+
+.photo-dropdown.show {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   LINK FOTO
+   ========================================== */
+
+.photo-dropdown a {
+    display: block;
+
+    width: auto;
+
+    box-sizing: border-box;
+
+    padding: 13px 18px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    white-space: normal;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+/* Hilangkan garis pada item terakhir */
+
+.photo-dropdown a:last-child {
+    border-bottom: none;
+}
+
+
+/* Hover */
+
+.photo-dropdown a:hover {
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    color: #ffffff;
+
+    padding-left: 24px;
+}
+
+
+/* ==========================================
+   SCROLLBAR DROPDOWN FOTO
+   ========================================== */
+
+.photo-dropdown::-webkit-scrollbar {
+    width: 5px;
+}
+
+.photo-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.photo-dropdown::-webkit-scrollbar-thumb {
+    background:
+        rgba(255, 255, 255, 0.25);
+
+    border-radius: 10px;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 600px) {
+
+    .photo-dropdown {
+        position: fixed;
+
+        top: 70px;
+
+        left: 15px;
+
+        right: 15px;
+
+        width: auto;
+
+        max-height: 75vh;
+    }
+
+}
+
+/* ==========================================
+   POSISI MENU NAVBAR
+   ========================================== */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Area menu kanan */
+
+.chapter-menu,
+.photo-menu {
+    display: inline-block;
+}
+
+
+/* Jika navbar memiliki beberapa menu */
+
+.navbar .chapter-menu {
+    margin-left: auto;
+}
+
+
+.navbar .photo-menu {
+    margin-left: 15px;
+}
